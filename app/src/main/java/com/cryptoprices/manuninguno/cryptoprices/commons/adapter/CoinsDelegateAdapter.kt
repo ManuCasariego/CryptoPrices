@@ -8,6 +8,9 @@ import com.cryptoprices.manuninguno.cryptoprices.commons.extensions.inflate
 import kotlinx.android.synthetic.main.coin_item.view.*
 
 
+
+
+
 class CoinsDelegateAdapter : ViewTypeDelegateAdapter {
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
         return TurnsViewHolder(parent)
@@ -26,6 +29,9 @@ class CoinsDelegateAdapter : ViewTypeDelegateAdapter {
             coin_24h_variation.text = item.percentChange24h.toString()
             coin_7d_variation.text = item.percentChange7d.toString()
             coin_price_textView.text = item.priceUSD.toString()
+
+            val id = resources.getIdentifier(item.id.replace("-","_") + "_picture_200x200", "mipmap", context.packageName)
+            coin_image_imageView.setImageResource(id)
         }
     }
 

@@ -51,7 +51,6 @@ class CoinsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun clearAndAddCoins(coins: List<CryptoCoin>) {
         items.clear()
         notifyItemRangeRemoved(0, getLastPosition())
-
         items.addAll(coins)
         items.add(loadingItem)
         notifyItemRangeInserted(0, items.size)

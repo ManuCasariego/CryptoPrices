@@ -1,4 +1,4 @@
-package com.cryptoprices.manuninguno.cryptoprices
+package com.cryptoprices.manuninguno.cryptoprices.api
 
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -18,7 +18,7 @@ class RestAPI {
 
     }
 
-    fun getCoins(start: Int, limit: Int, convert: String): Call<CryptoCoins> {
+    fun getCoins(start: String, limit: String, convert: String): Call<List<CryptoCoinResponse>> {
         return cryptoAPI.getCoins(start, limit, convert)
     }
 }
